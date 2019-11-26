@@ -44,7 +44,7 @@ class CoopBankBridgeChannel extends ApplicationChannel {
         print(_res);
         print(_res.body);
         print(_res.body);
-      return Response.ok({'hi': 'hi'});
+      return Response.ok(_res.body);
     });
 
     // Cooperative Bank
