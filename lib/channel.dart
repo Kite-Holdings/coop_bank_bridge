@@ -40,7 +40,10 @@ class CoopBankBridgeChannel extends ApplicationChannel {
           ..badCertificateCallback =
         ((X509Certificate cert, String host, int port) => trustSelfSigned);
         final IOClient ioClient = IOClient(httpClient);
-        await ioClient.get('https://api-sit.co-opbank.co.ke/store/');
+        final _res = await ioClient.get('https://api-sit.co-opbank.co.ke/store/');
+        print(_res);
+        print(_res.body);
+        print(_res.body);
       return Response.ok({'hi': 'hi'});
     });
 
