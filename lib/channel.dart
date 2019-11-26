@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:coop_bank_bridge/controllers/coop_controllers/coop_controllers.dart';
 import 'package:http/io_client.dart';
 
@@ -45,8 +43,7 @@ class CoopBankBridgeChannel extends ApplicationChannel {
         final _res = await ioClient.get('https://api-sit.co-opbank.co.ke/store/');
         print(_res);
         print(_res.body);
-        print(_res.body);
-      return Response.ok(json.encode(_res.body));
+      return Response.ok(_res.body);
     });
 
     // Cooperative Bank
