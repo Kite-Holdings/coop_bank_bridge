@@ -1,3 +1,4 @@
+import 'package:coop_bank_bridge/controllers/coop_controllers/coop_controllers.dart';
 import 'package:http/io_client.dart';
 
 import 'coop_bank_bridge.dart';
@@ -42,6 +43,27 @@ class CoopBankBridgeChannel extends ApplicationChannel {
         await ioClient.get('https://api-sit.co-opbank.co.ke/store/');
       return Response.ok({'hi': 'hi'});
     });
+
+    // Cooperative Bank
+    // pesalink send
+    router
+      .route('/thirdParties/coop/peaslink/send')
+      .link(() => PesaLinkSendController());
+
+    // pesalink receive
+    router
+      .route('/thirdParties/coop/peaslink/receive')
+      .link(() => PesaLinkReceiveController());
+
+    // internal funds transfer send
+    router
+      .route('/thirdParties/coop/ift/send')
+      .link(() => CoopInternalFundsTransferSendController());
+
+    // internal funds transfer receive
+    router
+      .route('/thirdParties/coop/ift/receive')
+      .link(() => CoopInternalFundsTransferReceiveController());
 
     return router;
   }
