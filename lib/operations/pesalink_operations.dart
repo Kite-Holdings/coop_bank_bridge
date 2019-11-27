@@ -77,9 +77,13 @@ class PesalinkOperations{
           ((X509Certificate cert, String host, int port) => trustSelfSigned);
     final IOClient ioClient = IOClient(httpClient);
 
-    final http.Response r = await ioClient.post(_url, headers: headers, body: json.encode(payload));
+    try{
+      final http.Response r = await ioClient.post(_url, headers: headers, body: json.encode(payload));
 
-    return json.decode(r.body);
+      return json.decode(r.body);
+    } catch (e){
+      return e.toString();
+    }
 
   }
 }

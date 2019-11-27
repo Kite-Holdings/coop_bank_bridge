@@ -1,4 +1,4 @@
-String coopCallbackUrl = 'http://13.59.89.190:2011';
+String coopCallbackUrl = 'http://18.189.117.13:8008/';
 String coopAccountNumber = '01136163949600';
 
 // String peaslinkUrl = 'https://developer.co-opbank.co.ke:8243/FundsTransfer/External/A2A/PesaLink/1.0.0';
