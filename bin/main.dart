@@ -3,7 +3,7 @@ import 'package:coop_bank_bridge/coop_bank_bridge.dart';
 Future main() async {
   final app = Application<CoopBankBridgeChannel>()
       ..options.configurationFilePath = "config.yaml"
-      ..options.port = 443;
+      ..options.port = 8008;
 
   final count = Platform.numberOfProcessors ~/ 2;
   await app.start(numberOfInstances: count > 0 ? count : 1);
