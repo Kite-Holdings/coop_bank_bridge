@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:coop_bank_bridge/coop_bank_bridge.dart';
 import 'package:coop_bank_bridge/operations/fetchCoopToken.dart';
 import 'package:coop_bank_bridge/operations/settings.dart';
+import 'package:coop_bank_bridge/settings/settings.dart';
 import 'package:coop_bank_bridge/utils/database_bridge.dart';
 import 'package:http/io_client.dart';
 import 'package:mongo_dart/mongo_dart.dart';
@@ -40,7 +41,8 @@ class PesalinkOperations{
     final String callBackURL = coopCallbackUrl;
     final String _accNumber = coopAccountNumber;
     final String _url = peaslinkUrl;
-    final String _accessToken = await fetchCoopToken();
+    // final String _accessToken = await fetchCoopToken();
+    final String _accessToken = bearerToken;
 
     messageReference = "test";
 
