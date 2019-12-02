@@ -85,7 +85,7 @@ class PesalinkOperations{
       print(r);
       print(r.statusCode);
       print(r.body);
-      return json.decode(r.body);
+      return r.body;
     } catch (e){
       return e.toString();
     }
