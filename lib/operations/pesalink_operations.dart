@@ -67,7 +67,7 @@ class PesalinkOperations{
         }
       ]
     };
-    print(payload);
+    // print(payload);
 
     final Map<String, String> headers = {
         'content-type': 'application/json',
@@ -80,8 +80,11 @@ class PesalinkOperations{
     final IOClient ioClient = IOClient(httpClient);
 
     try{
-      // final http.Response r = await ioClient.post(_url, headers: headers, body: json.encode(payload));
-      var r = await http.post(_url, headers: headers, body: json.encode(payload));
+      final http.Response r = await ioClient.post(_url, headers: headers, body: json.encode(payload));
+      // var r = await http.post(_url, headers: headers, body: json.encode(payload));
+      print(r);
+      print(r.statusCode);
+      print(r.body);
       return json.decode(r.body);
     } catch (e){
       return e.toString();
