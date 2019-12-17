@@ -63,7 +63,7 @@ class CoopInternalFundsTransferOperations{
       ]
     };
 
-    print(payload);
+    print(json.encode(payload));
 
     final Map<String, String> headers = {
         'content-type': 'application/json',
