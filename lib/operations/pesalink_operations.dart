@@ -44,7 +44,7 @@ class PesalinkOperations{
     final String _accessToken = await fetchCoopToken();
     // final String _accessToken = bearerToken;
 
-    messageReference = "test";
+    messageReference = ObjectId().toJson();
 
 
     final Map<String, dynamic> payload = {

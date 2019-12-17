@@ -40,7 +40,7 @@ class CoopInternalFundsTransferOperations{
     final String _url = coopInternalFundsTransferUrl;
     final String _accessToken = await fetchCoopToken();
 
-    messageReference = "123456";
+    messageReference = ObjectId().toJson();
 
 
     final Map<String, dynamic> payload = {
@@ -62,6 +62,8 @@ class CoopInternalFundsTransferOperations{
         }
       ]
     };
+
+    print(payload);
 
     final Map<String, String> headers = {
         'content-type': 'application/json',
