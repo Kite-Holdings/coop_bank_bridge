@@ -16,4 +16,4 @@ Map<String, String> pesaLinkCredetials = {
 
 const String consumerKey = 'U_nfk2fd4wKd5wq40CIjJxe358ca'; 
 const String consumerSecret = 'Agp2G_I84jLlcBLVHcaW41UZdeoa'; 
-const String bearerToken = '94dd25a9-b7e1-3906-a2f6-50525b622f35'; 
+// const String bearerToken = '94dd25a9-b7e1-3906-a2f6-50525b622f35'; 

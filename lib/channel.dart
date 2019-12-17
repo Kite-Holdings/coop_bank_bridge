@@ -1,4 +1,5 @@
 import 'package:coop_bank_bridge/controllers/coop_controllers/coop_controllers.dart';
+import 'package:coop_bank_bridge/operations/fetchCoopToken.dart';
 import 'package:http/io_client.dart';
 
 import 'coop_bank_bridge.dart';
@@ -35,15 +36,8 @@ class CoopBankBridgeChannel extends ApplicationChannel {
       .route("/")
       // .link(() => Authorizer.bearer(BearerAouthVerifier()))
       .linkFunction((request)async{
-        const bool trustSelfSigned = true;
-        final HttpClient httpClient = HttpClient()
-          ..badCertificateCallback =
-        ((X509Certificate cert, String host, int port) => trustSelfSigned);
-        final IOClient ioClient = IOClient(httpClient);
-        final _res = await ioClient.get('https://api-sit.co-opbank.co.ke/store/');
-        print(_res);
-        print(_res.body);
-      return Response.ok(_res.body);
+        final _res = await fetchCoopToken();
+      return Response.ok({"message": _res.toString()});
     });
 
     // Cooperative Bank

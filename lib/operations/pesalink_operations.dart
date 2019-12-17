@@ -41,8 +41,8 @@ class PesalinkOperations{
     final String callBackURL = coopCallbackUrl;
     final String _accNumber = coopAccountNumber;
     final String _url = peaslinkUrl;
-    // final String _accessToken = await fetchCoopToken();
-    final String _accessToken = bearerToken;
+    final String _accessToken = await fetchCoopToken();
+    // final String _accessToken = bearerToken;
 
     messageReference = "test";
 
