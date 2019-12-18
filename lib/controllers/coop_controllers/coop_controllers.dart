@@ -12,7 +12,8 @@ class PesaLinkSendController extends ResourceController{
       accountNumber: _pesalinkSerializer.accountNumber,
       amount: _pesalinkSerializer.amount,
       transactionCurrency: _pesalinkSerializer.transactionCurrency,
-      narration: _pesalinkSerializer.narration
+      narration: _pesalinkSerializer.narration,
+      bankCode: _pesalinkSerializer.bankCode,
     );
     final _response = await _pesalink.send;
 
