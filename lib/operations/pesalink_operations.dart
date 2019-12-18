@@ -67,7 +67,7 @@ class PesalinkOperations{
         }
       ]
     };
-    // print(payload);
+    print(payload);
 
     final Map<String, String> headers = {
         'content-type': 'application/json',
