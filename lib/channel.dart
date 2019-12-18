@@ -36,8 +36,9 @@ class CoopBankBridgeChannel extends ApplicationChannel {
       .route("/")
       // .link(() => Authorizer.bearer(BearerAouthVerifier()))
       .linkFunction((request)async{
-        final _res = await fetchCoopToken();
-      return Response.ok({"message": _res.toString()});
+        print(await request.body.decode());
+      //   final _res = await fetchCoopToken();
+      return Response.ok({"message": 'hi'});
     });
 
     // Cooperative Bank
