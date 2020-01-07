@@ -54,7 +54,7 @@ Future greaterThan() async {
 }
 
 
-Future lessThan() async {
+Future lessThanThree() async {
   final String messageReference = ObjectId().toJson();
   final Map<String, dynamic> payload = {
     "MessageReference": messageReference,
@@ -75,7 +75,7 @@ Future lessThan() async {
         "Narration": 'test operation'
       },
       {
-        "ReferenceNumber": '${messageReference}_1',
+        "ReferenceNumber": '${messageReference}_2',
         "AccountNumber": '01136163949600',
         "BankCode": 11,
         "Amount": 10,
@@ -83,7 +83,7 @@ Future lessThan() async {
         "Narration": 'test operation'
       },
       {
-        "ReferenceNumber": '${messageReference}_1',
+        "ReferenceNumber": '${messageReference}_3',
         "AccountNumber": '01136163949600',
         "BankCode": 11,
         "Amount": 30,
@@ -119,7 +119,7 @@ Future greaterThanThree() async {
         "Narration": 'test operation'
       },
       {
-        "ReferenceNumber": '${messageReference}_1',
+        "ReferenceNumber": '${messageReference}_2',
         "AccountNumber": '01136163949600',
         "BankCode": 11,
         "Amount": 3000,
@@ -127,7 +127,7 @@ Future greaterThanThree() async {
         "Narration": 'test operation'
       },
       {
-        "ReferenceNumber": '${messageReference}_1',
+        "ReferenceNumber": '${messageReference}_3',
         "AccountNumber": '01136163949600',
         "BankCode": 11,
         "Amount": 1000,
@@ -142,7 +142,7 @@ Future greaterThanThree() async {
 }
 
 
-Future lessThanThree() async {
+Future lessThan() async {
   final String messageReference = ObjectId().toJson();
   final Map<String, dynamic> payload = {
     "MessageReference": messageReference,
