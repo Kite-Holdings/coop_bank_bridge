@@ -27,7 +27,7 @@ Future checkBalance() async {
         ((X509Certificate cert, String host, int port) => trustSelfSigned);
   final IOClient ioClient = IOClient(httpClient);
   try{
-    final http.Response r = await ioClient.post(peaslinkUrl, headers: headers, body: json.encode(payload));
+    final http.Response r = await ioClient.post(accountBalanceUrl, headers: headers, body: json.encode(payload));
     return r.body;
   } catch (e){
     return e.toString();
