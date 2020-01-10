@@ -17,7 +17,7 @@ Future checkBalance() async {
   final String messageReference = ObjectId().toJson();
   final Map<String, dynamic> payload = {
     "MessageReference": messageReference,
-    "AccountNumber": "coopAccountNumber"
+    "AccountNumber": coopAccountNumber
   };
 
 
