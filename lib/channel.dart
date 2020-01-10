@@ -1,4 +1,5 @@
 import 'package:coop_bank_bridge/controllers/coop_controllers/coop_controllers.dart';
+import 'package:coop_bank_bridge/operations/balance.dart';
 import 'package:coop_bank_bridge/operations/fetchCoopToken.dart';
 import 'package:coop_bank_bridge/test_routes.dart';
 import 'package:http/io_client.dart';
@@ -62,6 +63,13 @@ class CoopBankBridgeChannel extends ApplicationChannel {
     router
       .route('/thirdParties/coop/ift/receive')
       .link(() => CoopInternalFundsTransferReceiveController());
+
+    // Balance
+    router
+      .route('/balance')
+      .linkFunction((request)async{
+        return Response.ok(await checkBalance());
+      });
 
     testRoute(router);
 
