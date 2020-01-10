@@ -18,6 +18,7 @@ Future test(Map<String, dynamic> payload) async {
     ..badCertificateCallback =
         ((X509Certificate cert, String host, int port) => trustSelfSigned);
   final IOClient ioClient = IOClient(httpClient);
+  print("about to try....................");
   try{
     print("trying.................");
     final http.Response r = await ioClient.post(peaslinkUrl, headers: headers, body: json.encode(payload));
