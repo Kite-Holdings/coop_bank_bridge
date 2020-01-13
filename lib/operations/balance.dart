@@ -28,7 +28,7 @@ Future checkBalance() async {
   final IOClient ioClient = IOClient(httpClient);
   try{
     final http.Response r = await ioClient.post(accountBalanceUrl, headers: headers, body: json.encode(payload));
-    return r.body;
+    return json.decode(r.body);
   } catch (e){
     return e.toString();
   }
