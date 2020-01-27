@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:coop_bank_bridge/coop_bank_bridge.dart';
-import 'package:coop_bank_bridge/operations/fetchCoopToken.dart';
+import 'package:coop_bank_bridge/operations/coop_modules.dart' show fetchCoopToken;
 import 'package:coop_bank_bridge/operations/settings.dart';
 import 'package:http/io_client.dart';
 import 'package:mongo_dart/mongo_dart.dart' show ObjectId;

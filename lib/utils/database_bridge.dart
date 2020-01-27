@@ -44,7 +44,7 @@ class DatabaseBridge{
     return _response;
   }
   // find and update
-  Future<Map<String, dynamic>> findAndModify({SelectorBuilder selector, modify}) async {
+  Future<Map<String, dynamic>> findAndModify({SelectorBuilder selector, ModifierBuilder modify}) async {
     final Map<String, dynamic> _response = {};
     await _db.open();
     try{
@@ -59,7 +59,6 @@ class DatabaseBridge{
     return _response;
   }
 
-  // TODO: Delete
 
   // Find one
   Future<Map<String, dynamic>> findOneBy(SelectorBuilder selector) async {

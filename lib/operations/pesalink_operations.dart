@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:coop_bank_bridge/coop_bank_bridge.dart';
-import 'package:coop_bank_bridge/operations/fetchCoopToken.dart';
+import 'package:coop_bank_bridge/operations/coop_modules.dart' show fetchCoopToken;
 import 'package:coop_bank_bridge/operations/settings.dart';
 import 'package:coop_bank_bridge/settings/settings.dart';
 import 'package:coop_bank_bridge/utils/database_bridge.dart';
@@ -34,10 +34,9 @@ class PesalinkOperations{
   static Db db =  Db(databaseUrl);
   final DbCollection companies = db.collection('coop_bank_transaction');
 
-  Future get send => _transact(sending: true);
-  Future get receive => _transact(sending: false);
+  Future get send => _transact();
 
-  Future _transact({bool sending}) async{
+  Future _transact() async{
     final String callBackURL = coopCallbackUrl;
     final String _accNumber = coopAccountNumber;
     final String _url = peaslinkUrl;
@@ -51,7 +50,7 @@ class PesalinkOperations{
       "MessageReference": messageReference,
       "CallBackUrl": callBackURL,
       "Source": {
-        "AccountNumber": sending ? _accNumber : accountNumber,
+        "AccountNumber": _accNumber,
         "Amount": amount,
         "TransactionCurrency": transactionCurrency,
         "Narration": narration
@@ -59,7 +58,7 @@ class PesalinkOperations{
       "Destinations": [
         {
           "ReferenceNumber": '${messageReference}_1',
-          "AccountNumber": sending ? accountNumber : _accNumber,
+          "AccountNumber": accountNumber,
           "BankCode": bankCode,
           "Amount": amount,
           "TransactionCurrency": transactionCurrency,
