@@ -75,7 +75,11 @@ class CoopInternalFundsTransferOperations{
     final IOClient ioClient = IOClient(httpClient);
     final http.Response r = await ioClient.post(_url, headers: headers, body: json.encode(payload));
 
-    return json.decode(r.body);
+    try {
+      return json.decode(r.body);
+    } catch (e) {
+      return r.body;
+    }
 
   }
 }
