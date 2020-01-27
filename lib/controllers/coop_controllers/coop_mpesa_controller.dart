@@ -8,7 +8,6 @@ class CoopMpesaController extends ResourceController{
     final CoopMpesaOperations _coopMpesa = CoopMpesaOperations(
       phoneNo: _coopMpesaSerializer.phoneNo,
       amount: _coopMpesaSerializer.amount,
-      transactionCurrency: _coopMpesaSerializer.transactionCurrency,
       narration: _coopMpesaSerializer.narration
     );
     final _response = await _coopMpesa.send;

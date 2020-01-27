@@ -17,7 +17,7 @@ Router coopRoutes(Router router){
   
   // internal funds transfer send
   router
-    .route('/thirdParties/coop/mpesa')
+    .route('/thirdParties/bank/mpesa')
     .link(() => CoopMpesaController());
 
   // Balance
