@@ -1,5 +1,4 @@
-import 'package:coop_bank_bridge/controllers/coop_controllers/coop_controllers.dart';
-import 'package:coop_bank_bridge/operations/balance.dart';
+import 'package:coop_bank_bridge/routes/coop_routes/coop_routers.dart';
 import 'package:coop_bank_bridge/test_routes.dart';
 
 import 'coop_bank_bridge.dart';
@@ -41,29 +40,9 @@ class CoopBankBridgeChannel extends ApplicationChannel {
       return Response.ok({"message": 'hi'});
     });
 
-    // Cooperative Bank
-    // pesalink send
-    router
-      .route('/thirdParties/coop/peaslink/send')
-      .link(() => PesaLinkSendController());
-
-    // internal funds transfer send
-    router
-      .route('/thirdParties/coop/ift/send')
-      .link(() => CoopInternalFundsTransferSendController());
     
-    // internal funds transfer send
-    router
-      .route('/thirdParties/coop/mpesa')
-      .link(() => CoopMpesaController());
 
-    // Balance
-    router
-      .route('/balance')
-      .linkFunction((request)async{
-        return Response.ok(await checkBalance());
-      });
-
+    coopRoutes(router);
     testRoute(router);
 
     return router;
