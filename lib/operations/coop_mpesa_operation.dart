@@ -72,7 +72,10 @@ class CoopMpesaOperations{
           ((X509Certificate cert, String host, int port) => trustSelfSigned);
     final IOClient ioClient = IOClient(httpClient);
     final http.Response r = await ioClient.post(_url, headers: headers, body: json.encode(payload));
-
+    print("//////////////////////////////////////////////");
+    print(r.body);
+    print(r.statusCode);
+    print("//////////////////////////////////////////////");
     return json.decode(r.body);
 
   }
