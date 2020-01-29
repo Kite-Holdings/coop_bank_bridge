@@ -3,7 +3,7 @@ String coopAccountNumber = '01136163949600';
 
 // String peaslinkUrl = 'https://openapi-sit.co-opbank.co.ke/FundsTransfer/External/A2A/PesaLink/1.0.0';
 String peaslinkUrl = 'https://openapi-sit.co-opbank.co.ke/FundsTransfer/External/A2A/PesaLink/1.0.0';
-String coopMpesaUrl = 'https://openapi-sit.co-opbank.co.ke/FundsTransfer/External/A2M/Mpesa/v1.0.0';
+String coopMpesaUrl = 'https://openapi-sit.co-opbank.co.ke/FundsTransfer/External/A2M/Mpesa/1.0.0';
 
 String accountBalanceUrl = 'https://openapi-sit.co-opbank.co.ke/Enquiry/AccountBalance/1.0.0';
 
