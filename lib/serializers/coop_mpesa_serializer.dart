@@ -5,13 +5,15 @@ class CoopMpesaSerializer extends Serializable{
   String phoneNo;
   int amount;
   String narration;
+  String currency;
 
   @override
   Map<String, dynamic> asMap() {
     return {
       "phoneNo": phoneNo,
       "amount": amount,
-      "narration": narration
+      "narration": narration,
+      "currency": currency,
     };
   }
 
@@ -20,6 +22,7 @@ class CoopMpesaSerializer extends Serializable{
     phoneNo = object['phoneNo'].toString();
     amount = int.parse(object['amount'].toString());
     narration = object['narration'].toString();
+    currency = object['currency'].toString();
   }
 
 }

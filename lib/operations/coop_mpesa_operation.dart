@@ -13,7 +13,8 @@ class CoopMpesaOperations{
   CoopMpesaOperations({
     this.phoneNo,
     this.amount,
-    this.narration
+    this.narration,
+    this.transactionCurrency
   });
 
 
